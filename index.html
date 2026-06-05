@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Circa Accountants — Measurable value. Fixed price. Leading-edge.</title>
+<meta name="description" content="Circa Accountants delivers high-value, flexible business services on a fixed-time, fixed-price basis. Offices in London and Canterbury." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#F6F8FC;
+  --bg-2:#EEF2F9;
+  --surface:#FFFFFF;
+  --ink:#06122A;
+  --ink-2:#0E1F40;
+  --ink-3:#1B305A;
+  --muted:#5B6B85;
+  --line:rgba(6,18,42,0.10);
+  --line-2:rgba(6,18,42,0.06);
+  --line-dark:rgba(255,255,255,0.10);
+  --blue:#2E5BFF;
+  --blue-2:#5B8DEF;
+  --blue-3:#8FB3FF;
+  --blue-glow:#3D7EFF;
+  --cyan:#00C8FF;
+  --shadow-sm:0 4px 14px rgba(6,18,42,0.06);
+  --shadow:0 30px 80px -30px rgba(6,18,42,0.35);
+  --shadow-blue:0 30px 80px -20px rgba(46,91,255,0.45);
+  --r:20px;
+  --r-sm:12px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight:400;
+  font-feature-settings:"ss01","cv11";
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+/* ===== noise ===== */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.02  0 0 0 0 0.07  0 0 0 0 0.16  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ===== layout ===== */
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+section{position:relative;z-index:2}
+
+/* ===== type ===== */
+.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.02em;line-height:1}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--blue);
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px rgba(46,91,255,0.18);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(46,91,255,0)}}
+
+/* ===== NAV ===== */
+nav.top{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  z-index:60;
+  display:flex;align-items:center;gap:6px;
+  padding:8px 8px 8px 22px;
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid rgba(6,18,42,0.08);
+  border-radius:999px;
+  box-shadow:0 18px 50px -22px rgba(6,18,42,0.22);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.logo-mark{
+  width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--ink);
+}
+.logo-mark svg{width:100%;height:100%;display:block}
+.logo-mark .c-blue{color:#0E2E80}
+.logo-mark .c-mute{color:#A8AFBC}
+footer .logo-mark{color:#fff}
+footer .logo-mark .c-blue{color:#5B8DEF}
+footer .logo-mark .c-mute{color:rgba(255,255,255,0.55)}
+nav.top .brand{display:flex;align-items:center;gap:10px;padding-right:18px;border-right:1px solid var(--line)}
+nav.top .brand strong{font-family:'Fraunces',serif;font-size:21px;letter-spacing:-0.01em;font-weight:500;color:var(--ink)}
+nav.top{flex-wrap:nowrap;white-space:nowrap}
+nav.top .brand{flex-shrink:0}
+nav.top ul{display:flex;gap:2px;list-style:none;flex-wrap:nowrap}
+nav.top ul a{padding:9px 14px;border-radius:999px;font-size:13.5px;font-weight:450;color:var(--ink-3);transition:.25s;white-space:nowrap}
+nav.top ul a:hover{background:rgba(6,18,42,0.05);color:var(--ink)}
+nav.top .cta{padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:.25s}
+nav.top .cta:hover{background:var(--blue);box-shadow:0 8px 24px -8px var(--blue-glow)}
+nav.top .cta svg{width:14px;height:14px}
+@media(max-width:760px){
+  nav.top ul{display:none}
+  nav.top .brand{border-right:0}
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  padding:160px 0 100px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+@media(max-width:1080px){.hero-grid{grid-template-columns:1fr;gap:60px}}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-weight:380;
+  font-size:clamp(56px, 7.4vw, 124px);
+  line-height:0.96;
+  letter-spacing:-0.035em;
+  color:var(--ink);
+  margin-top:24px;
+}
+.hero h1 .ital{font-style:italic;font-weight:340;color:var(--blue)}
+.hero h1 .grad{
+  background:linear-gradient(100deg, var(--blue) 0%, var(--blue-glow) 40%, var(--cyan) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 .stroke{
+  -webkit-text-stroke:1.5px var(--ink);
+  color:transparent;
+}
+.hero .lede{
+  max-width:520px;
+  font-size:18px;
+  color:var(--muted);
+  margin-top:36px;
+  line-height:1.6;
+}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:40px}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 26px;border-radius:999px;
+  font-size:14.5px;font-weight:500;
+  transition:.3s cubic-bezier(.2,.7,.2,1);
+  position:relative;
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--blue);box-shadow:0 16px 40px -12px var(--blue-glow);transform:translateY(-1px)}
+.btn-primary svg{width:16px;height:16px;transition:.3s}
+.btn-primary:hover svg{transform:translate(3px,-3px)}
+.btn-ghost{background:rgba(255,255,255,0.6);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);background:#fff}
+
+/* hero mesh gradient */
+.mesh{
+  position:absolute;
+  top:-200px;right:-160px;
+  width:1100px;height:1100px;
+  z-index:-1;
+  filter:blur(60px);
+  opacity:.55;
+  pointer-events:none;
+  background:
+    radial-gradient(45% 45% at 30% 30%, var(--blue) 0%, transparent 60%),
+    radial-gradient(40% 40% at 80% 25%, var(--cyan) 0%, transparent 60%),
+    radial-gradient(35% 35% at 50% 75%, var(--blue-glow) 0%, transparent 60%),
+    radial-gradient(35% 35% at 90% 80%, #B8D2FF 0%, transparent 60%);
+  animation:mesh 28s ease-in-out infinite alternate;
+}
+@keyframes mesh{
+  from{transform:rotate(0deg) scale(1)}
+  to{transform:rotate(30deg) scale(1.1)}
+}
+
+/* ===== Engagement proposal — printed document, NOT a product UI ===== */
+.proposal{
+  position:relative;
+  background:#FBFAF6;
+  color:var(--ink);
+  border-radius:8px;
+  padding:42px 44px 32px;
+  box-shadow:
+    0 60px 120px -40px rgba(6,18,42,0.35),
+    0 0 0 1px rgba(6,18,42,0.06);
+  transform:rotate(-1.5deg);
+  font-family:'Inter',sans-serif;
+}
+.proposal::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg, var(--blue) 0%, var(--blue-glow) 100%);
+  border-radius:8px 0 0 8px;
+}
+.proposal::after{
+  content:"";position:absolute;inset:0;border-radius:8px;pointer-events:none;
+  background:linear-gradient(135deg, rgba(46,91,255,0.025) 0%, transparent 50%);
+}
+.doc-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid var(--line);
+  position:relative;
+}
+.doc-head .meta{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.doc-head .title{
+  font-family:'Fraunces',serif;font-size:24px;font-weight:500;letter-spacing:-.015em;color:var(--ink);
+  line-height:1.15;
+}
+.doc-head .ref{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--muted);
+  text-align:right;flex-shrink:0;
+}
+.doc-head .ref strong{color:var(--ink);font-weight:500;display:block;font-size:11px;margin-top:3px;letter-spacing:.1em}
+.doc-rows{display:grid;gap:0}
+.doc-rows .r{
+  display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:baseline;
+  padding:11px 0;border-bottom:1px dashed var(--line-2);
+}
+.doc-rows .r:last-of-type{border-bottom:none}
+.doc-rows .r .lbl{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.doc-rows .r .val{
+  font-family:'Fraunces',serif;font-size:16.5px;color:var(--ink);font-weight:400;line-height:1.4;
+}
+.doc-rows .r .val em{font-style:italic;color:var(--blue)}
+.fee-block{
+  margin-top:22px;padding:20px 22px;
+  background:linear-gradient(135deg, var(--ink) 0%, var(--ink-3) 100%);
+  border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  color:#fff;
+}
+.fee-block .lbl{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+}
+.fee-block .val{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.01em;
+}
+.fee-block .val em{font-style:italic;color:var(--blue-3)}
+.doc-foot{
+  margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.doc-foot .sig{
+  font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);
+}
+.doc-foot .sig::before{
+  content:"";display:inline-block;width:80px;height:1px;background:var(--ink);margin-right:14px;vertical-align:middle;
+}
+.doc-foot .stamp{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+  padding:7px 14px;border:1.5px solid var(--blue);border-radius:4px;color:var(--blue);font-weight:500;
+  transform:rotate(-4deg);
+}
+@media(max-width:1080px){
+  .proposal{transform:none;padding:34px 28px 24px}
+  .doc-rows .r{grid-template-columns:104px 1fr;gap:14px}
+  .doc-rows .r .val{font-size:15px}
+  .fee-block .val{font-size:19px}
+}
+
+/* ===== TRUST STRIP ===== */
+.trust{
+  margin-top:80px;
+  padding:32px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,0.4);
+}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+}
+.trust-cell{
+  background:rgba(255,255,255,0.6);
+  padding:6px 24px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.trust-cell .k{font-family:'Fraunces',serif;font-size:44px;letter-spacing:-0.02em;color:var(--ink);line-height:1}
+.trust-cell .k em{font-style:italic;color:var(--blue)}
+.trust-cell .v{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:8px}
+@media(max-width:880px){.trust-grid{grid-template-columns:1fr 1fr}}
+
+/* ===== SERVICES ===== */
+.services{padding:160px 0 100px}
+.svc-head{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:end;
+  margin-bottom:64px;
+}
+@media(max-width:980px){.svc-head{grid-template-columns:1fr;gap:24px}}
+.svc-head h2{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:clamp(44px,6vw,88px);line-height:0.98;
+  letter-spacing:-0.03em;color:var(--ink);
+}
+.svc-head h2 em{font-style:italic;color:var(--blue);font-weight:340}
+.svc-head p{font-size:17px;color:var(--muted);max-width:48ch;line-height:1.6}
+
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
+
+.card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:32px;
+  overflow:hidden;
+  transition:.45s cubic-bezier(.2,.7,.2,1);
+  min-height:320px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  isolation:isolate;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:transparent;
+}
+.card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(80% 100% at 0% 0%, rgba(46,91,255,0.05), transparent 60%);
+  opacity:0;transition:.45s;z-index:-1;
+}
+.card:hover::before{opacity:1}
+
+.card .num{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--blue);letter-spacing:.22em;
+  display:flex;align-items:center;gap:10px;
+}
+.card .num::before{content:"";width:24px;height:1px;background:var(--blue)}
+.card h3{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:36px;line-height:1.02;letter-spacing:-0.02em;
+  margin:18px 0 14px;color:var(--ink);
+}
+.card h3 em{font-style:italic;color:var(--blue);font-weight:340}
+.card p{font-size:14.5px;color:var(--muted);max-width:38ch;line-height:1.6}
+.card .read{
+  margin-top:24px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:500;color:var(--ink);
+  padding-bottom:4px;border-bottom:1px solid transparent;transition:.3s;
+}
+.card .read svg{width:14px;height:14px;transition:.3s}
+.card:hover .read{border-color:var(--blue);color:var(--blue)}
+.card:hover .read svg{transform:translateX(4px)}
+.card .glyph{
+  position:absolute;right:-30px;bottom:-30px;
+  width:180px;height:180px;opacity:.06;color:var(--ink);
+  transition:.45s;
+}
+.card:hover .glyph{opacity:.14;transform:rotate(-6deg) scale(1.06);color:var(--blue)}
+
+.card.span-7{grid-column:span 7}
+.card.span-5{grid-column:span 5}
+.card.span-4{grid-column:span 4}
+.card.span-8{grid-column:span 8}
+.card.span-6{grid-column:span 6}
+.card.span-12{grid-column:span 12}
+
+/* feature card */
+.card.feature{
+  background:linear-gradient(180deg, #0B1B3B 0%, #06122A 100%);
+  color:#fff;
+  border-color:transparent;
+}
+.card.feature::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(50% 70% at 100% 0%, rgba(46,91,255,0.4), transparent 60%),
+    radial-gradient(40% 60% at 0% 100%, rgba(0,200,255,0.18), transparent 60%);
+  pointer-events:none;
+}
+.card.feature h3{color:#fff}
+.card.feature h3 em{color:var(--blue-3)}
+.card.feature p{color:rgba(255,255,255,0.7)}
+.card.feature .read{color:var(--blue-3)}
+.card.feature .num{color:var(--blue-3)}
+.card.feature .num::before{background:var(--blue-3)}
+.card.feature:hover{transform:translateY(-4px)}
+.card.feature .glyph{color:#fff;opacity:.08}
+
+@media(max-width:980px){
+  .svc-grid{grid-template-columns:repeat(6,1fr)}
+  .card.span-7,.card.span-5,.card.span-4,.card.span-8,.card.span-6,.card.span-12{grid-column:span 6}
+}
+
+/* ===== ETHOS / NUMBERS ===== */
+.ethos{
+  margin:60px 0;
+  background:linear-gradient(180deg, #0B1B3B 0%, #06122A 100%);
+  color:#fff;
+  padding:140px 0;
+  border-radius:36px;
+  position:relative;
+  overflow:hidden;
+}
+.ethos::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(35% 50% at 90% 15%, rgba(46,91,255,0.35), transparent 60%),
+    radial-gradient(40% 50% at 10% 90%, rgba(0,200,255,0.18), transparent 60%);
+}
+.ethos::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(circle at 50% 50%, black 30%, transparent 75%);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%, black 30%, transparent 75%);
+}
+.ethos .wrap{max-width:1200px}
+.ethos-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;position:relative}
+@media(max-width:980px){.ethos-grid{grid-template-columns:1fr;gap:48px}}
+.ethos h2{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:clamp(48px,6vw,92px);
+  line-height:1.02;letter-spacing:-0.03em;
+}
+.ethos h2 em{font-style:italic;color:var(--blue-3);font-weight:340}
+.ethos .quote{
+  margin-top:36px;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:24px;line-height:1.45;
+  color:rgba(255,255,255,0.82);
+  border-left:1.5px solid var(--blue);
+  padding-left:24px;
+  max-width:42ch;
+}
+
+.pillars{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden}
+.pillars .p{
+  padding:24px 28px;
+  background:#091a3a;
+  display:grid;grid-template-columns:48px 1fr;column-gap:22px;row-gap:6px;align-items:start;
+  transition:.3s;
+}
+.pillars .p:hover{background:#0c2148}
+.pillars .p .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue-3);letter-spacing:.2em;padding-top:6px}
+.pillars .p .t{font-family:'Fraunces',serif;font-size:26px;letter-spacing:-0.01em;font-weight:380}
+.pillars .p .d{grid-column:2;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.55;max-width:46ch}
+
+/* ===== OFFICES ===== */
+.offices{padding:160px 0}
+.off-head{margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+@media(max-width:880px){.off-head{grid-template-columns:1fr}}
+.off-head h2{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:clamp(44px,6vw,84px);line-height:0.98;letter-spacing:-0.03em;
+}
+.off-head h2 em{font-style:italic;color:var(--blue);font-weight:340}
+.off-head p{font-size:17px;color:var(--muted);max-width:44ch;justify-self:end;line-height:1.6}
+@media(max-width:880px){.off-head p{justify-self:start}}
+
+.off-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:980px){.off-grid{grid-template-columns:1fr}}
+.office{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+  transition:.4s;
+}
+.office:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.office .visual{
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg, #0B1B3B 0%, #102C5B 100%);
+  border-bottom:1px solid var(--line);
+}
+.office .visual::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(60% 80% at 50% 100%, rgba(46,91,255,0.4), transparent 70%),
+    radial-gradient(60% 80% at 50% 100%, rgba(0,200,255,0.18), transparent 70%);
+}
+.office .visual svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto}
+.office .body{padding:32px 36px 36px}
+.office .pin{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--blue);
+  background:rgba(46,91,255,0.08);
+  padding:6px 14px;border-radius:999px;
+  text-transform:uppercase;
+}
+.office h3{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:54px;line-height:1;
+  letter-spacing:-0.025em;
+  margin:18px 0 12px;
+  color:var(--ink);
+}
+.office h3 em{font-style:italic;color:var(--blue);font-weight:340}
+.office .addr{font-size:15.5px;color:var(--muted);line-height:1.7;max-width:30ch;margin-bottom:24px}
+.office .addr strong{color:var(--ink);font-weight:600;letter-spacing:.02em}
+.office .addr-link{
+  display:block;color:var(--muted);text-decoration:none;
+  transition:color .25s ease;
+}
+.office .addr-link:hover{color:var(--ink)}
+.office .addr-link strong{position:relative;display:inline-block}
+.office .addr-link .addr-icon{
+  display:inline-block;margin-left:6px;
+  font-size:13px;color:var(--blue);opacity:.7;line-height:1;
+  vertical-align:1px;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.office .addr-link:hover .addr-icon{opacity:1;transform:translate(2px,-2px)}
+/* Office card layout — flex column so .lines docks to bottom of each card */
+.office{display:flex;flex-direction:column}
+.office .body{flex:1;display:flex;flex-direction:column}
+.office .lines{
+  margin-top:auto;display:flex;flex-direction:column;gap:1px;
+  background:var(--line-2);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  min-height:172px;
+}
+.office .lines a{
+  flex:1;background:var(--surface);padding:14px 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-size:14px;
+  transition:.25s;
+}
+.office .lines a:hover{background:var(--bg-2)}
+.office .lines a .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.office .lines a .val{font-weight:500}
+.office .lines a:hover .val{color:var(--blue)}
+
+/* ===== CTA ===== */
+.cta-strip{
+  margin:0 0 60px;
+  padding:120px 0;
+  text-align:center;
+  position:relative;
+}
+.cta-strip::before{
+  content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:900px;height:900px;max-width:90vw;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(46,91,255,0.15) 0%, transparent 60%);
+  pointer-events:none;z-index:-1;
+}
+.cta-strip h2{
+  font-family:'Fraunces',serif;font-weight:380;
+  font-size:clamp(56px,8.5vw,148px);
+  line-height:0.93;letter-spacing:-0.035em;
+  max-width:14ch;margin:0 auto 36px;
+}
+.cta-strip h2 em{font-style:italic;font-weight:340;color:var(--blue)}
+.cta-strip h2 .grad{
+  background:linear-gradient(100deg, var(--blue) 0%, var(--blue-glow) 50%, var(--cyan) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center}
+
+/* ===== FOOTER ===== */
+footer{
+  background:linear-gradient(180deg, #06122A 0%, #030A1B 100%);
+  color:#fff;
+  padding:90px 0 40px;
+  border-radius:36px 36px 0 0;
+  position:relative;
+  overflow:hidden;
+}
+footer::before{
+  content:"CIRCA";
+  position:absolute;
+  bottom:-50px;left:50%;transform:translateX(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:380;
+  font-size:clamp(180px,30vw,400px);
+  letter-spacing:-0.05em;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(46,91,255,0.04));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:0.8;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px;position:relative;z-index:2}
+@media(max-width:880px){.f-grid{grid-template-columns:1fr 1fr;gap:40px}}
+.f-grid h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--blue-3);text-transform:uppercase;margin-bottom:18px}
+.f-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.f-grid ul a{font-size:14px;color:rgba(255,255,255,0.7);transition:.25s}
+.f-grid ul a:hover{color:#fff;padding-left:4px}
+.f-brand{max-width:34ch}
+.f-brand .lo{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.f-brand .lo strong{font-family:'Fraunces',serif;font-size:24px;font-weight:500}
+.f-brand p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65}
+.f-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);
+  font-size:12px;color:rgba(255,255,255,0.45);
+  font-family:'JetBrains Mono',monospace;letter-spacing:.14em;
+  text-transform:uppercase;
+  position:relative;z-index:2;
+}
+@media(max-width:880px){.f-bottom{flex-direction:column;gap:14px;text-align:center}}
+
+/* ===== reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+
+::selection{background:var(--blue);color:#fff}
+
+footer .word-circa{font-family:'Fraunces',serif;font-size:28px;letter-spacing:-0.015em;font-weight:500;color:#fff;line-height:1;display:flex;align-items:baseline;gap:8px}
+footer .word-acc{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:500;transform:translateY(-2px);display:inline-block}
+footer .lo{display:flex;align-items:center;gap:12px}
+
+/* ===== Footer socials ===== */
+.f-social{display:flex;align-items:center;gap:14px;margin-top:24px}
+.f-social-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+.f-social-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.85);
+  font-size:13px;font-weight:500;
+  transition:.25s cubic-bezier(.2,.7,.2,1);
+}
+.f-social-link:hover{
+  background:var(--blue);border-color:var(--blue);color:#fff;
+  transform:translateY(-1px);box-shadow:0 10px 24px -10px var(--blue-glow);
+}
+.f-social-link svg{flex-shrink:0;transition:transform .25s ease}
+.f-social-link:hover svg{transform:scale(1.08)}
+.f-social-link .lbl{font-family:'Inter',sans-serif}
+@media(max-width:880px){.f-social{justify-content:flex-start}}
+nav.top ul a[aria-current='page']{background:rgba(46,91,255,0.10);color:var(--blue)}
+nav.top a.brand{cursor:pointer;text-decoration:none;border-radius:18px;transition:opacity .2s ease}
+nav.top a.brand:hover{opacity:.78}
+nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+
+/* ============ MOBILE: hamburger button + panel ============ */
+.menu-btn{
+  display:none;width:38px;height:38px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,0.6);
+  align-items:center;justify-content:center;cursor:pointer;
+  color:var(--ink);flex-shrink:0;margin-left:6px;transition:.2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.menu-btn:hover{background:#fff;border-color:var(--ink)}
+.menu-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.menu-btn svg{width:18px;height:18px;display:block;color:var(--ink)}
+.menu-btn[aria-expanded="true"] .icon-open{display:none}
+.menu-btn[aria-expanded="false"] .icon-close{display:none}
+
+.menu-panel{
+  display:none;
+  position:fixed;top:74px;left:50%;transform:translateX(-50%);
+  width:calc(100vw - 20px);max-width:380px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid var(--line);border-radius:22px;
+  padding:14px;z-index:59;
+  box-shadow:0 30px 80px -20px rgba(6,18,42,0.35);
+}
+.menu-panel.open{display:block;animation:menuIn .2s ease-out}
+@keyframes menuIn{from{opacity:0;transform:translate(-50%,-6px)}to{opacity:1;transform:translate(-50%,0)}}
+.menu-panel ul{display:flex;flex-direction:column;gap:2px;list-style:none}
+.menu-panel a{
+  padding:14px 18px;border-radius:14px;font-size:15.5px;font-weight:500;
+  color:var(--ink-3);display:flex;align-items:center;justify-content:space-between;
+  transition:.2s;min-height:48px;
+}
+.menu-panel a:hover,.menu-panel a:focus{background:rgba(6,18,42,0.05);color:var(--ink)}
+.menu-panel a[aria-current="page"]{background:rgba(46,91,255,0.10);color:var(--blue)}
+
+/* ============ MOBILE: section/typography tightening ============ */
+@media (max-width: 760px){
+  .menu-btn{display:inline-flex}
+  nav.top{
+    width:calc(100vw - 20px);max-width:calc(100vw - 20px);
+    top:10px;padding:8px 8px 8px 16px;
+    border-radius:18px;
+  }
+  nav.top .brand{padding-right:12px}
+  nav.top .brand strong{font-size:18px}
+  .logo-mark{width:30px;height:30px}
+}
+
+@media (max-width: 600px){
+  .wrap{padding:0 20px}
+
+  /* Hero */
+  .hero{padding:96px 0 56px}
+  .hero-grid{gap:40px}
+  .hero h1{font-size:clamp(38px,9.5vw,52px);margin-top:18px;line-height:1.04;letter-spacing:-.025em}
+  .hero .lede{font-size:16px;margin-top:22px;line-height:1.55}
+  .hero-meta{flex-direction:column;align-items:stretch;gap:10px;margin-top:28px}
+  .hero-meta .btn{justify-content:center;width:100%;padding:14px 22px;min-height:48px}
+
+  /* Hero proposal card — tame the tilt + side-padding so it never overflows */
+  .proposal{padding:28px 22px 22px;transform:none;border-radius:6px}
+  .doc-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .doc-head .ref{text-align:left}
+  .doc-head .title{font-size:20px}
+  .doc-rows .r{grid-template-columns:88px 1fr;gap:12px;padding:10px 0}
+  .doc-rows .r .lbl{font-size:9.5px}
+  .doc-rows .r .val{font-size:14px}
+  .fee-block{padding:16px;flex-wrap:wrap;gap:8px}
+  .fee-block .val{font-size:17px}
+  .doc-foot{flex-direction:column;align-items:flex-start;gap:14px}
+  .doc-foot .sig::before{width:60px}
+
+  /* Trust strip → 1 col on tiny phones, 2 col on mid phones */
+  .trust{margin-top:48px;padding:24px 0}
+  .trust-grid{grid-template-columns:1fr 1fr !important;gap:16px}
+  .trust-cell .k{font-size:30px}
+  .trust-cell .v{font-size:9.5px}
+
+  /* Section paddings (everything is too tall on mobile) */
+  .services,.ethos,.offices,.apply,.what,.what + section,
+  section[id="proof"],section[id="contact"],section[id="services"]{
+    padding:64px 0;
+  }
+
+  /* Service cards */
+  .svc-grid{grid-template-columns:1fr;gap:14px}
+  .svc-head{grid-template-columns:1fr;gap:18px}
+  .svc-head h2{font-size:clamp(28px,7vw,40px)}
+  .card{padding:24px 22px}
+  .card .h3,.card h3{font-size:18px}
+
+  /* Ethos / Approach */
+  .ethos-grid{grid-template-columns:1fr;gap:36px}
+  .ethos h2{font-size:clamp(28px,7vw,42px)}
+  .pillars .p{padding:22px}
+
+  /* Offices */
+  .off-grid{grid-template-columns:1fr;gap:18px}
+  .office{padding:28px 24px}
+  .office .body h3{font-size:22px}
+
+  /* Footer */
+  .f-grid{grid-template-columns:1fr !important;gap:36px;margin-bottom:50px}
+  .f-bottom{flex-direction:column;gap:12px;text-align:center;font-size:10.5px;letter-spacing:.12em;line-height:1.5}
+  .f-brand{max-width:none}
+
+  /* Page-hero on careers */
+  .page-hero{padding:96px 0 50px}
+  .page-hero h1{font-size:clamp(40px,10vw,64px);margin-top:16px;line-height:1.04}
+  .page-hero .lede{font-size:16px;margin-top:22px}
+
+  /* What we look for grid */
+  .what-grid{grid-template-columns:1fr;gap:14px}
+  .what-card{padding:24px 22px}
+
+  /* Apply grid */
+  .apply-grid{grid-template-columns:1fr;gap:36px}
+  .apply h2{font-size:clamp(28px,7.5vw,40px)}
+  .apply .apply-cta{width:100%;justify-content:center}
+}
+
+@media (max-width: 420px){
+  .wrap{padding:0 16px}
+  nav.top{padding:7px 7px 7px 14px;top:8px}
+  nav.top .brand strong{font-size:17px}
+  .logo-mark{width:28px;height:28px}
+  .hero{padding:84px 0 46px}
+  .hero h1{font-size:38px}
+  .trust-grid{grid-template-columns:1fr !important}
+  .doc-rows .r{grid-template-columns:74px 1fr}
+}
+
+
+/* ============ MOBILE: aggressive whitespace reset ============ */
+@media (max-width: 760px){
+  /* Every full-width section gets a sane mobile padding */
+  section{padding:48px 0 !important}
+  .hero{padding:84px 0 40px !important}      /* keep space for fixed nav */
+  .page-hero{padding:84px 0 36px !important}
+  .trust{margin-top:28px !important;padding:22px 0 !important}
+  .cta-strip,.cta-band,.cta,.apply{padding:48px 0 !important}
+  footer{padding:40px 0 22px !important}
+
+  /* Tighten the gaps between heading + content within every section */
+  .svc-head,.off-head,.sec-head,.what .head{margin-bottom:24px !important;gap:14px !important}
+  .off-head{grid-template-columns:1fr !important}
+
+  /* Crush the grid gaps that look enormous on a phone */
+  .hero-grid{gap:28px !important}
+  .ethos-grid{gap:28px !important}
+  .apply-grid{gap:28px !important}
+  .svc-grid{gap:12px !important}
+  .what-grid{gap:12px !important}
+  .off-grid{gap:14px !important}
+  .pillars{gap:1px !important}
+
+  /* Hero text block */
+  .hero-meta{margin-top:22px !important;gap:10px !important}
+  .hero .lede{margin-top:18px !important}
+  .hero h1{margin-top:14px !important}
+  .page-hero h1{margin-top:12px !important}
+  .page-hero .lede{margin-top:18px !important}
+  .page-hero .hero-meta{margin-top:24px !important}
+
+  /* Section heads */
+  .sec-head{margin-bottom:24px !important}
+  .svc-head h2,.off-head h2,.ethos h2,.apply h2,.what h2{margin-bottom:8px !important}
+  .svc-head p,.off-head p,.ethos p,.apply p,.what p{margin-top:8px !important}
+
+  /* Cards — internal breathing room reduced */
+  .card{padding:22px 20px !important}
+  .pillars .p{padding:20px !important}
+  .what-card{padding:22px 20px !important}
+  .office{padding:24px 22px !important}
+
+  /* Footer — was the worst offender */
+  .f-grid{grid-template-columns:1fr !important;gap:28px !important;margin-bottom:32px !important;padding-bottom:0 !important}
+  .f-brand p{margin-top:12px !important;font-size:14px !important;line-height:1.6 !important}
+  .f-brand .lo{margin-bottom:14px !important}
+  .f-social{margin-top:18px !important;gap:10px !important}
+  .f-bottom{padding-top:22px !important;flex-direction:column !important;gap:10px !important;text-align:center !important;font-size:10px !important;letter-spacing:.1em !important;line-height:1.55 !important}
+
+  /* Proposal card on hero */
+  .proposal{padding:26px 20px 20px !important;transform:none !important;border-radius:6px !important}
+  .doc-head{padding-bottom:14px !important;margin-bottom:14px !important}
+  .doc-rows .r{padding:10px 0 !important}
+  .fee-block{margin-top:14px !important;padding:14px 16px !important}
+  .doc-foot{margin-top:14px !important}
+
+  /* Trust strip */
+  .trust-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}
+  .trust-cell{padding:10px 0 !important}
+
+  /* Breadcrumb on careers */
+  .crumb{margin-bottom:6px !important}
+}
+
+@media (max-width: 420px){
+  section{padding:40px 0 !important}
+  .hero{padding:76px 0 32px !important}
+  .page-hero{padding:76px 0 30px !important}
+  .trust-grid{grid-template-columns:1fr !important;gap:10px !important}
+  .trust-cell{padding:8px 0 !important;text-align:left !important;display:flex !important;align-items:baseline !important;gap:12px !important}
+  .trust-cell .v{margin-top:0 !important}
+  footer{padding:32px 0 18px !important}
+  .f-grid{gap:24px !important;margin-bottom:24px !important}
+}
+
+
+/* ============ MOBILE: never let .reveal hide content ============ */
+@media (max-width: 760px){
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+}
+/* Belt-and-braces: if JS fails completely on any device, content still shows */
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1 !important;transform:none !important}
+}
+
+
+/* Trust strip — all stat values share the blue accent, no italic so they read uniformly */
+.trust-cell .k em{font-style:normal;color:var(--blue)}
+
+/* MOBILE: hide the sample engagement proposal card; keep on desktop */
+@media (max-width: 760px){
+  .hero-grid > div:nth-child(2){display:none !important}
+  .hero-grid{grid-template-columns:1fr !important;gap:0 !important}
+}
+
+/* MOBILE: address + contact lines use the full card width */
+@media (max-width: 760px){
+  .office .addr{max-width:none !important;font-size:16px !important;line-height:1.65 !important}
+  .office .addr-link{display:block;width:100%}
+  .office .lines{min-height:0 !important;margin-top:18px !important;border-radius:12px !important}
+  .office .lines a{
+    flex:0 0 auto !important;padding:16px 18px !important;font-size:15px !important;
+    justify-content:space-between !important;gap:18px !important;min-height:54px !important;
+  }
+  .office .lines a .label{font-size:11px !important;letter-spacing:.2em !important}
+  .office .lines a .val{font-size:15px !important;text-align:right !important}
+}
+
+
+/* ============ MOBILE FINAL: kill decorative dead-space on phones ============ */
+@media (max-width: 760px){
+  /* Office cards: shrink the navy decorative gradient strip, restore flush card padding */
+  .office{padding:0 !important;border-radius:18px !important}
+  .office .visual{height:64px !important}
+  .office .visual svg{transform:scale(1.3);transform-origin:center bottom}
+  .office .body{padding:22px 22px 22px !important}
+  .office .pin{padding:5px 10px !important;font-size:10px !important;margin-bottom:14px !important}
+  .office h3{font-size:24px !important;margin-bottom:10px !important}
+  .office .addr{margin-bottom:18px !important}
+
+  /* Any other tall background icon/decorative svg in cards */
+  .card svg[style*="width:180px"],.card .deco{width:80px !important;height:80px !important}
+
+  /* Bring sections in even tighter — was 48px, now 36 */
+  section{padding:36px 0 !important}
+  .hero{padding:80px 0 26px !important}
+  .page-hero{padding:80px 0 26px !important}
+  .trust{margin-top:18px !important;padding:18px 0 !important}
+  .cta-strip,.cta-band,.cta,.apply{padding:40px 0 !important}
+  footer{padding:32px 0 18px !important}
+
+  /* Cards across the board */
+  .card{padding:20px !important}
+  .pillars .p{padding:18px !important}
+  .what-card{padding:20px !important}
+
+  /* Section heads */
+  .svc-head,.off-head,.sec-head,.what .head{margin-bottom:18px !important}
+
+  /* Grids */
+  .svc-grid,.what-grid,.off-grid{gap:12px !important}
+  .hero-grid,.ethos-grid,.apply-grid{gap:22px !important}
+
+  /* Hero text */
+  .hero h1{margin-top:12px !important}
+  .hero .lede{margin-top:16px !important}
+  .hero-meta{margin-top:18px !important;gap:8px !important}
+
+  /* Footer */
+  .f-grid{gap:22px !important;margin-bottom:22px !important}
+  .f-brand p{margin-top:10px !important}
+
+  /* Re-affirm reveals are visible (must come AFTER all other rules) */
+  .reveal{opacity:1 !important;transform:none !important}
+}
+
+@media (max-width: 420px){
+  section{padding:28px 0 !important}
+  .hero{padding:72px 0 22px !important}
+  .page-hero{padding:72px 0 22px !important}
+  .office .visual{height:48px !important}
+  footer{padding:24px 0 14px !important}
+}
+
+
+/* ============ MOBILE — three targeted fixes ============ */
+@media (max-width: 760px){
+
+  /* 1) Office skyline visuals: show the WHOLE silhouette, just smaller.
+        The previous fix shrank the container but kept the SVG at width:100%,
+        which clipped the top off. Fit the SVG to the container's height instead. */
+  .office .visual{height:96px !important;overflow:hidden}
+  .office .visual svg{
+    position:absolute !important;
+    left:50% !important;
+    bottom:0 !important;
+    transform:translateX(-50%) !important;
+    height:100% !important;
+    width:auto !important;
+    max-width:none !important;
+  }
+
+  /* 2) Trust strip — strip the boxes, borders, separators on mobile.
+        The four stats float on the page background as plain typography. */
+  .trust{
+    margin-top:8px !important;
+    padding:6px 0 !important;
+    border:0 !important;
+    background:transparent !important;
+  }
+  .trust-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:18px !important;
+    background:transparent !important;
+  }
+  .trust-cell{
+    background:transparent !important;
+    padding:6px 4px !important;
+  }
+
+  /* 3) Hamburger button — make absolutely sure taps register on iOS and the
+        button reads clearly as a menu (add the word MENU beside the icon). */
+  .menu-btn{
+    touch-action:manipulation !important;
+    width:auto !important;
+    height:38px !important;
+    padding:0 14px !important;
+    gap:8px !important;
+    font-family:'JetBrains Mono',monospace !important;
+    font-size:11px !important;
+    letter-spacing:.18em !important;
+    text-transform:uppercase !important;
+    font-weight:600 !important;
+  }
+  .menu-btn::after{
+    content:"Menu";
+    color:var(--ink);
+  }
+  .menu-btn[aria-expanded="true"]::after{content:"Close"}
+}
+
+@media (max-width: 420px){
+  .office .visual{height:84px !important}
+  .trust-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}
+  .menu-btn::after{content:""}   /* on really narrow phones drop the label, keep icon only */
+  .menu-btn{padding:0 !important;width:38px !important;justify-content:center !important}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a class="brand" href="#top" aria-label="Circa Accountants — back to home">
+    <span class="logo-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-width="15"><circle cx="40" cy="50" r="28" stroke-dasharray="132 200" style="stroke:#0E2E80" class="c-blue"/><circle cx="60" cy="50" r="28" stroke-dasharray="132 200" transform="rotate(180 60 50)" style="stroke:#A8AFBC" class="c-mute"/></g></svg></span>
+    <strong>Circa Accountants</strong>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ethos">Approach</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#offices">Offices</a></li>
+    <li><a href="#contact">Contact us</a></li>
+  </ul>
+
+  <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+</nav>
+
+<div class="menu-panel" id="menuPanel" role="dialog" aria-label="Mobile menu">
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ethos">Approach</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#offices">Offices</a></li>
+    <li><a href="#contact">Contact us</a></li>
+  </ul>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="mesh" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Chartered &nbsp;·&nbsp; London &nbsp;·&nbsp; Canterbury</span>
+        <h1>
+          Measurable<br/>
+          <span class="ital">value,</span> on a<br/>
+          <span class="grad">fixed price.</span>
+        </h1>
+        <p class="lede">
+          Circa Accountants delivers high-value, flexible business services using
+          leading-edge technology — on a fixed-time, fixed-price basis. No surprises.
+          Just clarity, compliance and the confidence to grow.
+        </p>
+        <div class="hero-meta">
+          <a class="btn btn-primary" href="#contact">
+            Book a discovery call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#services">Explore services</a>
+        </div>
+      </div>
+
+      <!-- Engagement proposal (printed document, NOT a product UI) -->
+      <div class="reveal reveal-delay-1" style="position:relative">
+        <article class="proposal" aria-label="Sample fixed-fee engagement proposal">
+          <header class="doc-head">
+            <div>
+              <div class="meta">Sample</div>
+              <div class="title">Fixed-fee engagement proposal</div>
+            </div>
+            <div class="ref">
+              Ref.
+              <strong>CIRCA &middot; 24/0142</strong>
+            </div>
+          </header>
+          <div class="doc-rows">
+            <div class="r"><span class="lbl">Scope</span><span class="val">Year-end accounts <em>+</em> corporation tax</span></div>
+            <div class="r"><span class="lbl">Timeline</span><span class="val">14 working days from records received</span></div>
+            <div class="r"><span class="lbl">Revisions</span><span class="val">Unlimited within scope</span></div>
+            <div class="r"><span class="lbl">Billing</span><span class="val">One invoice &mdash; no hourly add-ons</span></div>
+          </div>
+          <div class="fee-block">
+            <span class="lbl">Total &mdash; fixed</span>
+            <span class="val">&pound; <em>agreed in advance</em></span>
+          </div>
+          <footer class="doc-foot">
+            <div class="sig">Signed before any work begins.</div>
+            <div class="stamp">Agreed</div>
+          </footer>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- ============ TRUST ============ -->
+    <div class="trust">
+      <div class="trust-grid">
+        <div class="trust-cell"><div class="k"><em>Fixed</em></div><div class="v">Time / Price</div></div>
+        <div class="trust-cell"><div class="k"><em>2</em></div><div class="v">UK Offices</div></div>
+        <div class="trust-cell"><div class="k"><em>5</em></div><div class="v">Core Service Lines</div></div>
+        <div class="trust-cell"><div class="k"><em>100%</em></div><div class="v">Cloud Native</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <h2>Built for the<br/><em>way you</em> work.</h2>
+      <p>Five disciplines, one philosophy. Every engagement is scoped, priced and delivered against a fixed plan — so you always know what you're getting, when, and for how much.</p>
+    </div>
+
+    <div class="svc-grid">
+
+      <article class="card feature span-7 reveal">
+        <div>
+          <div class="num">01 / Start-Up</div>
+          <h3>For the founders<br/>still <em>finding shape.</em></h3>
+          <p>Many start-up businesses are often unaware of the many regulations that govern them. We get you compliant on day one, then build a finance function that scales with the company you're becoming.</p>
+        </div>
+        <a class="read" href="#contact">Start with Circa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="28"/><circle cx="50" cy="50" r="16"/>
+        </svg>
+      </article>
+
+      <article class="card span-5 reveal reveal-delay-1">
+        <div>
+          <div class="num">02 / Companies</div>
+          <h3>Limited liability,<br/><em>unlimited</em> upside.</h3>
+          <p>The main advantage of trading as a company is its liability. We handle statutory accounts, corporation tax, and the strategic decisions in between.</p>
+        </div>
+        <a class="read" href="#contact">Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="20" y="20" width="60" height="60"/><rect x="32" y="32" width="36" height="36"/>
+        </svg>
+      </article>
+
+      <article class="card span-4 reveal">
+        <div>
+          <div class="num">03 / Partnerships</div>
+          <h3>Unlimited<br/>or <em>limited.</em></h3>
+          <p>There are two types of partnerships, unlimited and limited liability. We help you choose, structure and report on the one that fits your venture.</p>
+        </div>
+        <a class="read" href="#contact">Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="35" cy="50" r="25"/><circle cx="65" cy="50" r="25"/>
+        </svg>
+      </article>
+
+      <article class="card span-4 reveal reveal-delay-1">
+        <div>
+          <div class="num">04 / Sole Traders</div>
+          <h3>One person,<br/>one ledger,<br/><em>zero stress.</em></h3>
+          <p>Self-assessment, bookkeeping, and the quietly satisfying experience of knowing every number is in the right place — done.</p>
+        </div>
+        <a class="read" href="#contact">Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="50" cy="50" r="40"/><line x1="20" y1="50" x2="80" y2="50"/>
+        </svg>
+      </article>
+
+      <article class="card span-4 reveal reveal-delay-2">
+        <div>
+          <div class="num">05 / Taxation</div>
+          <h3>Manage the<br/>administration<br/>of <em>tax.</em></h3>
+          <p>It is important to be able to manage the administration of tax. We turn the complex into the routine — and the routine into a competitive advantage.</p>
+        </div>
+        <a class="read" href="#contact">Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <polygon points="50,15 85,75 15,75"/><line x1="35" y1="60" x2="65" y2="60"/>
+        </svg>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ETHOS ============ -->
+<section class="ethos" id="ethos">
+  <div class="wrap">
+    <div class="ethos-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--blue-3)"><span class="dot" style="background:var(--blue-3);box-shadow:0 0 0 3px rgba(143,179,255,0.2)"></span> The Circa Approach</span>
+        <h2 style="margin-top:24px">A practice built on<br/>four <em>principles.</em></h2>
+        <p class="quote">
+          "To deliver measurable, high-value, flexible business services, using
+          leading-edge technology on a fixed-time, fixed-price basis."
+        </p>
+      </div>
+
+      <div class="pillars reveal reveal-delay-1">
+        <div class="p">
+          <span class="n">01</span>
+          <span class="t">Measurable value</span>
+          <span class="d">Every deliverable mapped to an outcome you can read on a single page.</span>
+        </div>
+        <div class="p">
+          <span class="n">02</span>
+          <span class="t">Fixed time, fixed price</span>
+          <span class="d">Scope. Date. Number. No surprise invoices, no hourly creep.</span>
+        </div>
+        <div class="p">
+          <span class="n">03</span>
+          <span class="t">Leading-edge technology</span>
+          <span class="d">A modern stack that turns compliance into a side-effect, not a project.</span>
+        </div>
+        <div class="p">
+          <span class="n">04</span>
+          <span class="t">Enduring partnerships</span>
+          <span class="d">A robust client portfolio built on relationships that compound over time.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFICES ============ -->
+<section class="offices" id="offices">
+  <div class="wrap">
+    <div class="off-head reveal">
+      <h2>Two <em>offices,</em><br/>one practice.</h2>
+      <p>Drop into Great Portland Street or Jewry Lane. Pick the city — the team, the standards, and the fixed price are the same.</p>
+    </div>
+
+    <div class="off-grid">
+
+      <article class="office reveal">
+        <div class="visual">
+          <!-- London skyline SVG -->
+          <svg viewBox="0 0 600 180" preserveAspectRatio="xMidYMax meet">
+            <g fill="none" stroke="#5B8DEF" stroke-width="1.2" opacity="0.9">
+              <!-- Gherkin -->
+              <path d="M120 170 L120 90 Q138 50 156 90 L156 170 Z"/>
+              <line x1="125" y1="100" x2="151" y2="100"/>
+              <line x1="125" y1="115" x2="151" y2="115"/>
+              <line x1="125" y1="130" x2="151" y2="130"/>
+              <line x1="125" y1="145" x2="151" y2="145"/>
+              <!-- Shard -->
+              <path d="M210 170 L235 25 L260 170 Z"/>
+              <line x1="219" y1="120" x2="251" y2="120"/>
+              <line x1="223" y1="90" x2="247" y2="90"/>
+              <!-- Walkie Talkie -->
+              <path d="M295 170 L295 70 Q310 50 330 60 L350 75 L350 170 Z"/>
+              <!-- Big Ben -->
+              <rect x="400" y="60" width="22" height="110"/>
+              <polygon points="400,60 411,40 422,60"/>
+              <rect x="406" y="70" width="10" height="14"/>
+              <!-- St Paul's dome -->
+              <ellipse cx="490" cy="100" rx="30" ry="25"/>
+              <rect x="475" y="100" width="30" height="70"/>
+              <line x1="490" y1="60" x2="490" y2="75"/>
+              <!-- Small bldgs -->
+              <rect x="40" y="130" width="40" height="40"/>
+              <rect x="80" y="115" width="35" height="55"/>
+              <rect x="540" y="120" width="35" height="50"/>
+              <rect x="170" y="135" width="35" height="35"/>
+              <rect x="370" y="125" width="25" height="45"/>
+              <!-- Bridge hint -->
+              <path d="M0 170 Q300 158 600 170" opacity="0.4"/>
+            </g>
+            <g fill="#8FB3FF" opacity="0.6">
+              <circle cx="411" cy="76" r="1.5"/>
+              <circle cx="234" cy="80" r="1.5"/>
+              <circle cx="138" cy="70" r="1.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="pin">◉ London</span>
+          <h3>London<br/><em>HQ</em></h3>
+          <a class="addr addr-link" href="https://www.google.com/maps/search/?api=1&query=5th+Floor%2C+167-169+Great+Portland+Street%2C+London+W1W+5PF" target="_blank" rel="noopener" aria-label="Open London office address in Maps">5th Floor, 167–169 Great Portland Street<br />London<br /><strong>W1W 5PF<span class="addr-icon" aria-hidden="true">↗</span></strong></a>
+          <div class="lines">
+            <a href="tel:02077207300"><span class="label">Direct</span><span class="val">020 7720 7300</span></a>
+            <a href="tel:02077206300"><span class="label">Alt</span><span class="val">020 7720 6300</span></a>
+            <a href="mailto:info@circaaccountants.co.uk"><span class="label">Email</span><span class="val">info@circaaccountants.co.uk</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="office reveal reveal-delay-1">
+        <div class="visual">
+          <!-- Canterbury skyline SVG -->
+          <svg viewBox="0 0 600 180" preserveAspectRatio="xMidYMax meet">
+            <g fill="none" stroke="#5B8DEF" stroke-width="1.2" opacity="0.9">
+              <!-- Canterbury Cathedral central tower -->
+              <rect x="270" y="40" width="60" height="130"/>
+              <rect x="265" y="30" width="6" height="20"/>
+              <rect x="329" y="30" width="6" height="20"/>
+              <rect x="296" y="20" width="8" height="30"/>
+              <line x1="270" y1="70" x2="330" y2="70"/>
+              <line x1="270" y1="100" x2="330" y2="100"/>
+              <line x1="270" y1="130" x2="330" y2="130"/>
+              <rect x="285" y="135" width="12" height="35"/>
+              <rect x="303" y="135" width="12" height="35"/>
+              <!-- Side towers -->
+              <rect x="210" y="80" width="32" height="90"/>
+              <polygon points="210,80 226,55 242,80"/>
+              <rect x="358" y="80" width="32" height="90"/>
+              <polygon points="358,80 374,55 390,80"/>
+              <!-- Medieval rooftops -->
+              <polygon points="60,170 60,130 90,110 120,130 120,170"/>
+              <polygon points="120,170 120,135 150,115 180,135 180,170"/>
+              <polygon points="420,170 420,135 450,115 480,135 480,170"/>
+              <polygon points="480,170 480,130 510,110 540,130 540,170"/>
+              <!-- Small windows -->
+              <rect x="285" y="50" width="6" height="10"/>
+              <rect x="309" y="50" width="6" height="10"/>
+              <!-- Ground line -->
+              <line x1="0" y1="170" x2="600" y2="170"/>
+            </g>
+            <g fill="#8FB3FF" opacity="0.6">
+              <circle cx="226" cy="58" r="1.5"/>
+              <circle cx="374" cy="58" r="1.5"/>
+              <circle cx="300" cy="25" r="1.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="pin">◉ Canterbury</span>
+          <h3>Canterbury<br/><em>Studio</em></h3>
+          <a class="addr addr-link" href="https://www.google.com/maps/search/?api=1&query=Studio+22%2C+1-2+Jewry+Lane%2C+Canterbury+CT1+2NP" target="_blank" rel="noopener" aria-label="Open Canterbury office address in Maps">Studio 22, 1–2 Jewry Lane<br />Canterbury<br /><strong>CT1 2NP<span class="addr-icon" aria-hidden="true">↗</span></strong></a>
+          <div class="lines">
+            <a href="tel:02039210183"><span class="label">Direct</span><span class="val">0203 921 0183</span></a>
+            <a href="mailto:info@circaaccountants.co.uk"><span class="label">Email</span><span class="val">info@circaaccountants.co.uk</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-strip" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="display:inline-flex"><span class="dot"></span> Ready when you are</span>
+    <h2 class="reveal" style="margin-top:24px">
+      Let's put a <em>number</em><br/>
+      on <span class="grad">growth.</span>
+    </h2>
+    <div class="cta-row reveal reveal-delay-1">
+      <a class="btn btn-primary" href="mailto:info@circaaccountants.co.uk">
+        info@circaaccountants.co.uk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="tel:02077207300">020 7720 7300</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="lo">
+          <span class="logo-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-width="15"><circle cx="40" cy="50" r="28" stroke-dasharray="132 200" style="stroke:#0E2E80" class="c-blue"/><circle cx="60" cy="50" r="28" stroke-dasharray="132 200" transform="rotate(180 60 50)" style="stroke:#A8AFBC" class="c-mute"/></g></svg></span>
+          <strong class="word-circa">Circa<span class="word-acc">accountants</span></strong>
+        </div>
+        <p>A chartered practice delivering measurable, high-value, flexible business services on a fixed-time, fixed-price basis — for start-ups, companies, partnerships, sole traders and the tax that follows them all.</p>
+        <div class="f-social" aria-label="Circa on social media">
+          <span class="f-social-label">Follow</span>
+          <a class="f-social-link" href="https://www.facebook.com/circaaccountants/" target="_blank" rel="noopener noreferrer" aria-label="Circa Accountants on Facebook">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.2-1.5 1.5-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7V14h2.7v8h3.1z"/></svg>
+            <span class="lbl">Facebook</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Start-Up Business</a></li>
+          <li><a href="#services">Companies</a></li>
+          <li><a href="#services">Partnerships</a></li>
+          <li><a href="#services">Sole Traders</a></li>
+          <li><a href="#services">Taxation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Offices</h4>
+        <ul>
+          <li><a href="#offices">London — W1W 5PF</a></li>
+          <li><a href="#offices">Canterbury — CT1 2NP</a></li>
+          <li><a href="mailto:info@circaaccountants.co.uk">info@circaaccountants.co.uk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#ethos">The Approach</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="#contact">Get in touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Circa Accountants Ltd &middot; Registered in England &amp; Wales No. 04506788 &middot; All rights reserved</span>
+      <span>Measurable · Fixed · Leading-edge</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Safety net: if for any reason IO doesn't fire (Safari quirks, iframes, etc.),
+// force every reveal visible after a short delay or on first interaction.
+function forceRevealsVisible(){
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+setTimeout(forceRevealsVisible, 1500);
+['scroll','touchstart','keydown'].forEach(function(ev){
+  window.addEventListener(ev, forceRevealsVisible, { once: true, passive: true });
+});
+
+// nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav.top');
+  const y = window.scrollY;
+  nav.style.transform = `translateX(-50%) scale(${y > 40 ? 0.96 : 1})`;
+  nav.style.boxShadow = y > 40
+    ? '0 22px 60px -22px rgba(6,18,42,0.32)'
+    : '0 18px 50px -22px rgba(6,18,42,0.22)';
+}, { passive:true });
+
+// parallax dashboard
+const dash = document.querySelector('.dash');
+if(dash && window.innerWidth > 1080){
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 6;
+    const y = (e.clientY / window.innerHeight - 0.5) * 4;
+    dash.style.transform = `perspective(1400px) rotateY(${-8 + x}deg) rotateX(${6 - y}deg)`;
+  }, { passive:true });
+}
+
+// mobile menu (hardened for iOS)
+(function(){
+  // Belt-and-braces tap handling: prevent the iOS 300ms click delay and double-firing.
+  document.documentElement.style.touchAction = document.documentElement.style.touchAction || 'manipulation';
+  var btn = document.getElementById('menuBtn');
+  var panel = document.getElementById('menuPanel');
+  if(!btn || !panel) return;
+  function close(){
+    panel.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open menu');
+  }
+  function open(){
+    panel.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    btn.setAttribute('aria-label','Close menu');
+  }
+  btn.addEventListener('click', function(){
+    panel.classList.contains('open') ? close() : open();
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') close();
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.classList.contains('open')) return;
+    if(panel.contains(e.target) || btn.contains(e.target)) return;
+    close();
+  });
+})();
+
+</script>
+
+</body>
+</html>
