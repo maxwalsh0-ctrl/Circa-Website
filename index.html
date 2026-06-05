@@ -1018,6 +1018,12 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .menu-btn{padding:0 !important;width:38px !important;justify-content:center !important}
 }
 
+
+/* Service cards are now whole-card clickable mailto targets */
+.svc-grid .card{transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;cursor:pointer}
+.svc-grid .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:transparent}
+.svc-grid .card:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+
 </style>
 
 <!-- OG-START -->
@@ -1167,7 +1173,7 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
           <h3>For the founders<br/>still <em>finding shape.</em></h3>
           <p>Many start-up businesses are often unaware of the many regulations that govern them. We get you compliant on day one, then build a finance function that scales with the company you're becoming.</p>
         </div>
-        <a class="read" href="#contact">Start with Circa
+        <a class="read" href="mailto:info@circaaccountants.co.uk?subject=Start-up%20business%20%E2%80%94%20initial%20enquiry">Start with Circa
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -1181,7 +1187,7 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
           <h3>Limited liability,<br/><em>unlimited</em> upside.</h3>
           <p>The main advantage of trading as a company is its liability. We handle statutory accounts, corporation tax, and the strategic decisions in between.</p>
         </div>
-        <a class="read" href="#contact">Learn more
+        <a class="read" href="mailto:info@circaaccountants.co.uk?subject=Limited%20company%20services%20%E2%80%94%20initial%20enquiry">Learn more
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -1195,7 +1201,7 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
           <h3>Unlimited<br/>or <em>limited.</em></h3>
           <p>There are two types of partnerships, unlimited and limited liability. We help you choose, structure and report on the one that fits your venture.</p>
         </div>
-        <a class="read" href="#contact">Learn more
+        <a class="read" href="mailto:info@circaaccountants.co.uk?subject=Partnership%20services%20%E2%80%94%20initial%20enquiry">Learn more
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -1209,7 +1215,7 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
           <h3>One person,<br/>one ledger,<br/><em>zero stress.</em></h3>
           <p>Self-assessment, bookkeeping, and the quietly satisfying experience of knowing every number is in the right place — done.</p>
         </div>
-        <a class="read" href="#contact">Learn more
+        <a class="read" href="mailto:info@circaaccountants.co.uk?subject=Sole%20trader%20services%20%E2%80%94%20initial%20enquiry">Learn more
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -1223,7 +1229,7 @@ nav.top a.brand:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
           <h3>Manage the<br/>administration<br/>of <em>tax.</em></h3>
           <p>It is important to be able to manage the administration of tax. We turn the complex into the routine — and the routine into a competitive advantage.</p>
         </div>
-        <a class="read" href="#contact">Learn more
+        <a class="read" href="mailto:info@circaaccountants.co.uk?subject=Taxation%20services%20%E2%80%94%20initial%20enquiry">Learn more
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -1528,6 +1534,25 @@ if(dash && window.innerWidth > 1080){
     close();
   });
 })();
+
+
+// Service cards — make the whole card clickable, fires the .read link's mailto
+document.querySelectorAll('.svc-grid .card').forEach(function(card){
+  var link = card.querySelector('a.read');
+  if(!link) return;
+  card.style.cursor = 'pointer';
+  card.setAttribute('role','link');
+  card.setAttribute('tabindex','0');
+  card.setAttribute('aria-label', (link.textContent || '').trim() + ' — opens email');
+  function go(){ window.location.href = link.href; }
+  card.addEventListener('click', function(e){
+    if(e.target.closest('a,button')) return;   // let direct link clicks behave normally
+    go();
+  });
+  card.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
+  });
+});
 
 </script>
 
